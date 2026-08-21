@@ -1,16 +1,16 @@
 pipeline {
     agent any
+stages {
+        stage('Clone') {
+            steps {
+              git branch: 'main', url: 'https://github.com/t240638-skp/Java.git'
+            }
+        }
 
     stages {
         stage('Compile') {
-            steps {
-               bat 'javac Hello.java'
-            }
-        }
-            stage('Run') {
-            steps {
-               bat 'java Hello'
-            }
+@@ -14,3 +20,4 @@ pipeline {
         }
     }
+}
 }
