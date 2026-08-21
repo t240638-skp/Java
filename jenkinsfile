@@ -7,10 +7,16 @@ stages {
             }
         }
 
-    stages {
         stage('Compile') {
-@@ -14,3 +20,4 @@ pipeline {
+            steps {
+               bat 'javac Hello.java'
+            }
+        }
+            stage('Run') {
+            steps {
+               bat 'java Hello'
+            }
         }
     }
 }
-}
+
