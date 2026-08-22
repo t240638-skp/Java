@@ -3,6 +3,11 @@ pipeline {
 stages {
         stage('Compile') {
             steps {
+               git branch: 'main', credentialsId: 'c613ecca-465c-4ce1-a20d-1eb0476302a8', url: 'https://github.com/t240638-skp/Java.git'
+            }
+        }
+        stage('Compile') {
+            steps {
                bat 'javac Hello.java'
             }
         }
